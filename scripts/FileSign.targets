@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <UsingTask TaskName="SignFile" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
+        <ParameterGroup>
+            <SigningTarget Required="true" ParameterType="Microsoft.Build.Framework.ITaskItem" />
+            <CertificateThumbprint ParameterType="System.String" />
+            <TargetFrameworkVersion ParameterType="System.String" />
+            <TimestampUrl ParameterType="System.String" />
+            <CertificateFile ParameterType="System.String" />
+            <CertificatePassword ParameterType="System.String" />
+            <TargetFrameworkIdentifier ParameterType="System.String" />
+        </ParameterGroup>
+        <Task>
+            <Reference Include="mscorlib" />
+            <Reference Include="Microsoft.Build.Tasks.Core" />
+            <Using Namespace="System" />
+            <Code Type="Fragment" Language="cs">
+                <![CDATA[
+                    var EnvCertFile = System.Environment.GetEnvironmentVariable("CertificateFile");
+
+                    Log.LogMessage("CertFile:!!" + EnvCertFile);
+
+                    if (string.IsNullOrWhiteSpace(CertificateFile) && string.IsNullOrWhiteSpace(EnvCertFile)) {
+                        //use standard signing process
+                        var signFile = new Microsoft.Build.Tasks.SignFile();
+                
+                        signFile.CertificateThumbprint = CertificateThumbprint;
+                        signFile.SigningTarget = SigningTarget;
+                        signFile.TargetFrameworkVersion = TargetFrameworkVersion;
+                        signFile.TimestampUrl = TimestampUrl;
+                
+                        return signFile.Execute();
+                    }
+                    else {
+                        //use signing information provided via build parameters
+                        var certificate = string.IsNullOrWhiteSpace(CertificateFile) ? EnvCertFile : CertificateFile;
+                        var EnvCertPassword = System.Environment.GetEnvironmentVariable("CertificatePassword");
+                        var certificatePassword = string.IsNullOrWhiteSpace(CertificatePassword) ? EnvCertPassword : CertificatePassword;
+                
+                        //convert certificate password string to secure string
+                        var secureString = new System.Security.SecureString();
+                        if (!string.IsNullOrWhiteSpace(certificatePassword))
+                            foreach (char ch in certificatePassword)
+                                secureString.AppendChar(ch);
+                
+                        //sign the provided signing target file
+                        Microsoft.Build.Tasks.Deployment.ManifestUtilities.SecurityUtilities.SignFile(
+                            certificate,
+                            secureString,
+                            TimestampUrl == null ? null : new Uri(TimestampUrl),
+                            SigningTarget.ItemSpec);
+                    
+                        return true;
+                    }
+                ]]>
+            </Code>
+        </Task>
+    </UsingTask>
+</Project>

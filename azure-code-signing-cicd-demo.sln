@@ -1,0 +1,136 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30711.63
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{8A3377DB-BA25-471F-93AF-AC4C184AEA41}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\FileSign.targets = scripts\FileSign.targets
+		scripts\New-SelfSignedCert.ps1 = scripts\New-SelfSignedCert.ps1
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "src\ConsoleApp\ConsoleApp.csproj", "{B4B31D85-B4A9-4521-91F3-AA26E621F89D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{61EA271E-FE7F-45D1-AE66-F592ECAADFC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClickOnceApp", "src\ClickOnceApp\ClickOnceApp.csproj", "{B8AE6CD2-8782-4F42-85A0-C8706C06505B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UWPApp", "src\UWPApp\UWPApp.csproj", "{19471A80-AED3-4946-B669-406E489EC937}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pipelines", "pipelines", "{D5F06B2A-1AE4-41DA-A9B7-D60C40776B60}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "yaml", "yaml", "{C8C5E5DD-1501-4810-9137-DE9C0526465F}"
+	ProjectSection(SolutionItems) = preProject
+		pipelines\yaml\BuildAndSignClickOnceApp.yml = pipelines\yaml\BuildAndSignClickOnceApp.yml
+		pipelines\yaml\BuildAndSignConsoleApp.yml = pipelines\yaml\BuildAndSignConsoleApp.yml
+		pipelines\yaml\BuildAndSignUWPApp.yml = pipelines\yaml\BuildAndSignUWPApp.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "json", "json", "{F738533E-9548-4DDC-80D9-6530FC91AB4D}"
+	ProjectSection(SolutionItems) = preProject
+		pipelines\json\BuildAndSignClickOnceApp.json = pipelines\json\BuildAndSignClickOnceApp.json
+		pipelines\json\BuildAndSignConsoleApp.json = pipelines\json\BuildAndSignConsoleApp.json
+		pipelines\json\BuildAndSignUWPApp.json = pipelines\json\BuildAndSignUWPApp.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{45366FB0-1A53-433D-84DA-9F432D2AACD6}"
+	ProjectSection(SolutionItems) = preProject
+		docs\AzureCIPipelineCodeSigning.docx = docs\AzureCIPipelineCodeSigning.docx
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|ARM64 = Debug|ARM64
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|ARM64 = Release|ARM64
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4B31D85-B4A9-4521-91F3-AA26E621F89D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4B31D85-B4A9-4521-91F3-AA26E621F89D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4B31D85-B4A9-4521-91F3-AA26E621F89D}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{B4B31D85-B4A9-4521-91F3-AA26E621F89D}.Debug|ARM.Build.0 = Debug|Any CPU
+		{B4B31D85-B4A9-4521-91F3-AA26E621F89D}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{B4B31D85-B4A9-4521-91F3-AA26E621F89D}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{B4B31D85-B4A9-4521-91F3-AA26E621F89D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B4B31D85-B4A9-4521-91F3-AA26E621F89D}.Debug|x64.Build.0 = Debug|Any CPU
+		{B4B31D85-B4A9-4521-91F3-AA26E621F89D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B4B31D85-B4A9-4521-91F3-AA26E621F89D}.Debug|x86.Build.0 = Debug|Any CPU
+		{B4B31D85-B4A9-4521-91F3-AA26E621F89D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4B31D85-B4A9-4521-91F3-AA26E621F89D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4B31D85-B4A9-4521-91F3-AA26E621F89D}.Release|ARM.ActiveCfg = Release|Any CPU
+		{B4B31D85-B4A9-4521-91F3-AA26E621F89D}.Release|ARM.Build.0 = Release|Any CPU
+		{B4B31D85-B4A9-4521-91F3-AA26E621F89D}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{B4B31D85-B4A9-4521-91F3-AA26E621F89D}.Release|ARM64.Build.0 = Release|Any CPU
+		{B4B31D85-B4A9-4521-91F3-AA26E621F89D}.Release|x64.ActiveCfg = Release|Any CPU
+		{B4B31D85-B4A9-4521-91F3-AA26E621F89D}.Release|x64.Build.0 = Release|Any CPU
+		{B4B31D85-B4A9-4521-91F3-AA26E621F89D}.Release|x86.ActiveCfg = Release|Any CPU
+		{B4B31D85-B4A9-4521-91F3-AA26E621F89D}.Release|x86.Build.0 = Release|Any CPU
+		{B8AE6CD2-8782-4F42-85A0-C8706C06505B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8AE6CD2-8782-4F42-85A0-C8706C06505B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8AE6CD2-8782-4F42-85A0-C8706C06505B}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{B8AE6CD2-8782-4F42-85A0-C8706C06505B}.Debug|ARM.Build.0 = Debug|Any CPU
+		{B8AE6CD2-8782-4F42-85A0-C8706C06505B}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{B8AE6CD2-8782-4F42-85A0-C8706C06505B}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{B8AE6CD2-8782-4F42-85A0-C8706C06505B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B8AE6CD2-8782-4F42-85A0-C8706C06505B}.Debug|x64.Build.0 = Debug|Any CPU
+		{B8AE6CD2-8782-4F42-85A0-C8706C06505B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B8AE6CD2-8782-4F42-85A0-C8706C06505B}.Debug|x86.Build.0 = Debug|Any CPU
+		{B8AE6CD2-8782-4F42-85A0-C8706C06505B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8AE6CD2-8782-4F42-85A0-C8706C06505B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8AE6CD2-8782-4F42-85A0-C8706C06505B}.Release|ARM.ActiveCfg = Release|Any CPU
+		{B8AE6CD2-8782-4F42-85A0-C8706C06505B}.Release|ARM.Build.0 = Release|Any CPU
+		{B8AE6CD2-8782-4F42-85A0-C8706C06505B}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{B8AE6CD2-8782-4F42-85A0-C8706C06505B}.Release|ARM64.Build.0 = Release|Any CPU
+		{B8AE6CD2-8782-4F42-85A0-C8706C06505B}.Release|x64.ActiveCfg = Release|Any CPU
+		{B8AE6CD2-8782-4F42-85A0-C8706C06505B}.Release|x64.Build.0 = Release|Any CPU
+		{B8AE6CD2-8782-4F42-85A0-C8706C06505B}.Release|x86.ActiveCfg = Release|Any CPU
+		{B8AE6CD2-8782-4F42-85A0-C8706C06505B}.Release|x86.Build.0 = Release|Any CPU
+		{19471A80-AED3-4946-B669-406E489EC937}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{19471A80-AED3-4946-B669-406E489EC937}.Debug|Any CPU.Build.0 = Debug|x86
+		{19471A80-AED3-4946-B669-406E489EC937}.Debug|ARM.ActiveCfg = Debug|ARM
+		{19471A80-AED3-4946-B669-406E489EC937}.Debug|ARM.Build.0 = Debug|ARM
+		{19471A80-AED3-4946-B669-406E489EC937}.Debug|ARM.Deploy.0 = Debug|ARM
+		{19471A80-AED3-4946-B669-406E489EC937}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{19471A80-AED3-4946-B669-406E489EC937}.Debug|ARM64.Build.0 = Debug|ARM64
+		{19471A80-AED3-4946-B669-406E489EC937}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{19471A80-AED3-4946-B669-406E489EC937}.Debug|x64.ActiveCfg = Debug|x64
+		{19471A80-AED3-4946-B669-406E489EC937}.Debug|x64.Build.0 = Debug|x64
+		{19471A80-AED3-4946-B669-406E489EC937}.Debug|x86.ActiveCfg = Debug|x86
+		{19471A80-AED3-4946-B669-406E489EC937}.Debug|x86.Build.0 = Debug|x86
+		{19471A80-AED3-4946-B669-406E489EC937}.Debug|x86.Deploy.0 = Debug|x86
+		{19471A80-AED3-4946-B669-406E489EC937}.Release|Any CPU.ActiveCfg = Release|x86
+		{19471A80-AED3-4946-B669-406E489EC937}.Release|Any CPU.Build.0 = Release|x86
+		{19471A80-AED3-4946-B669-406E489EC937}.Release|ARM.ActiveCfg = Release|ARM
+		{19471A80-AED3-4946-B669-406E489EC937}.Release|ARM.Build.0 = Release|ARM
+		{19471A80-AED3-4946-B669-406E489EC937}.Release|ARM.Deploy.0 = Release|ARM
+		{19471A80-AED3-4946-B669-406E489EC937}.Release|ARM64.ActiveCfg = Release|ARM64
+		{19471A80-AED3-4946-B669-406E489EC937}.Release|ARM64.Build.0 = Release|ARM64
+		{19471A80-AED3-4946-B669-406E489EC937}.Release|ARM64.Deploy.0 = Release|ARM64
+		{19471A80-AED3-4946-B669-406E489EC937}.Release|x64.ActiveCfg = Release|x64
+		{19471A80-AED3-4946-B669-406E489EC937}.Release|x64.Build.0 = Release|x64
+		{19471A80-AED3-4946-B669-406E489EC937}.Release|x64.Deploy.0 = Release|x64
+		{19471A80-AED3-4946-B669-406E489EC937}.Release|x86.ActiveCfg = Release|x86
+		{19471A80-AED3-4946-B669-406E489EC937}.Release|x86.Build.0 = Release|x86
+		{19471A80-AED3-4946-B669-406E489EC937}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B4B31D85-B4A9-4521-91F3-AA26E621F89D} = {61EA271E-FE7F-45D1-AE66-F592ECAADFC0}
+		{B8AE6CD2-8782-4F42-85A0-C8706C06505B} = {61EA271E-FE7F-45D1-AE66-F592ECAADFC0}
+		{19471A80-AED3-4946-B669-406E489EC937} = {61EA271E-FE7F-45D1-AE66-F592ECAADFC0}
+		{C8C5E5DD-1501-4810-9137-DE9C0526465F} = {D5F06B2A-1AE4-41DA-A9B7-D60C40776B60}
+		{F738533E-9548-4DDC-80D9-6530FC91AB4D} = {D5F06B2A-1AE4-41DA-A9B7-D60C40776B60}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5AC3AA20-028E-4D92-AD86-FAF0D7AD0F77}
+	EndGlobalSection
+EndGlobal
